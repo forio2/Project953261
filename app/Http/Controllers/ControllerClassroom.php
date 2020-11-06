@@ -41,7 +41,7 @@ class ControllerClassroom extends Controller
             'nameClassroom' => 'required',
         ]);
         Classroom::create($request->all());
-        return redirect()->back(); //go to previous page
+        return redirect('/classroom'); //go to previous page
     }
 
     /**
@@ -80,7 +80,12 @@ class ControllerClassroom extends Controller
             'nameClassroom' => 'required',
             'statusClassroom' => 'required',
         ]);
-        Classroom::find($id)->update($request->all());
+        //Classroom::find($id)->update($request->all());
+        Classroom::where('noClassroom', $id)->update([
+            'statusClassroom' => $request->statusClassroom
+        ]);
+       // Classroom::where('noClassroom', '=', $id)->update($request->all());
+
         return redirect('/classroom/create');
     }
 

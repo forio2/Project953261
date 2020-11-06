@@ -25,9 +25,9 @@
         <li>{{$error}}</li>
     @endforeach
     </ul>
-    @foreach($data as $classroom)
     <div class="container">
       <div class="row">
+    @foreach($data as $classroom)
         <div class="col">
             {!! Form::open(['action' => ['ControllerClassroom@update', $classroom->noClassroom], 'id' => $classroom->noClassroom , 'method' => 'PUT']) !!}
                 <div class="row" onclick="document.getElementById('<?php echo  $classroom->noClassroom?>').submit();" style="cursor:pointer"> <!-- onclick from form's id -->
@@ -45,9 +45,9 @@
                 </div>
             {!! Form::close() !!}
         </div>
+    @endforeach
       </div>
     </div>
-    @endforeach
 <style>
       .img-fluid{
         height: max-content;
