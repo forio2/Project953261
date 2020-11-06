@@ -17,14 +17,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/login', function () {
-    return view('first.login');
-});
-
-Route::get('/register', function () {
-    return view('first.register');
-});
-
 Route::resource('classroom', 'ControllerClassroom');
-
-Route::resource('first', 'ControllerPeople');
