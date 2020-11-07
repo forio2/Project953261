@@ -88,16 +88,16 @@
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
                             </div>
                         </div>
-
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="statusPeople" id="exampleRadios1" value="T" checked>
-                            <label class="form-check-label" for="exampleRadios1">Teacher</label>
+                        <div class="form-check row">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="statusPeople" id="exampleRadios1" value="T" checked>
+                                <label class="form-check-label">Teacher</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="statusPeople" id="exampleRadios2" value="S" checked>
+                                <label class="form-check-label">Student</label>
+                            </div>
                         </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="statusPeople" id="exampleRadios2" value="S" checked>
-                            <label class="form-check-label" for="exampleRadios2">Student</label>
-                        </div>
-
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
