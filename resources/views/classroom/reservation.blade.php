@@ -1,3 +1,6 @@
+@extends('layouts.app')
+
+@section('content')
 <div class="img-fluid">
     <div class="row logo-container-div justify-content-center">
       <div class="logo-wrapper col-auto">
@@ -18,8 +21,6 @@
     </div>  
 </div>
 <br><br>
-    <!-- Menu -->
-    <!-- chick go to Order-->
     <ul>
     @foreach($errors->all() as $error)
         <li>{{$error}}</li>
@@ -48,6 +49,7 @@
     @endforeach
       </div>
     </div>
+@endsection
 <style>
       .img-fluid{
         height: max-content;

@@ -1,4 +1,6 @@
+@extends('layouts.app')
 
+@section('content')
 <div class="img-fluid">
     <div class="row logo-container-div justify-content-center">
       <div class="logo-wrapper col-auto">
@@ -19,7 +21,7 @@
     </div>  
 </div>
 <br><br>
-    <div class="container">
+<div class="container">
     {!! Form::open(['action' => 'ControllerClassroom@store', 'method' => 'POST']) !!}
         <div class="form-group">
             <input type="text" class="form-control" placeholder="Enter Classroom Name" name="nameClassroom">
@@ -27,9 +29,11 @@
         <input type="hidden" name="statusClassroom" value="A">
         <div class="form-group">
             <button type="submit" class="btn btn-dark">Create</button>
+            <button type="button" onclick="window.location.href = '{{ url('classroom') }}'" class="btn btn-secondary">Back</button>
         </div>
     {!! Form::close() !!}
-    </div>
+</div>
+@endsection
 <style>
       .img-fluid{
         height: max-content;

@@ -22,4 +22,9 @@ Route::resource('classroom', 'ControllerClassroom');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+//Route for admin
+Route::group(['prefix' => 'teacher'], function(){
+    Route::group(['middleware' => ['teacher']], function(){
+        Route::get('/create', 'teacher\ControllerTeacher@index');
+    });
+});

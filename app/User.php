@@ -36,4 +36,10 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    const TEACHER = 'T';
+    const STUDENT = 'S';
+    public function isTeacher(){
+        return $this->statusPeople === self::TEACHER;
+    }
 }
