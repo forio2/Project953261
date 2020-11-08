@@ -14,7 +14,7 @@
     <div class="img-fluid">
         <div class="row logo-container-div justify-content-center">
             <div class="logo-wrapper col-auto">
-                <div class="jumbotron jumbotron-fluid rounded shadow-lg p-3 mb-5 rounded" style="width: 700px;"> <!--jumbotron, rounded and shadow -->
+                <div class="jumbotron jumbotron-fluid rounded shadow-lg p-3 mb-5 rounded" style="width: 700px; margin-top: 100px;"> <!--jumbotron, rounded and shadow -->
                     <div class="container">
                         <div class="row">
                             <div class="col-md-12">
@@ -47,7 +47,7 @@
   }
   .logo-wrapper {
     font-family: 'Raleway', sans-serif;
-    padding: 170px 30px;
+    padding: 250px 30px;
     text-align: center;
     position: relative;
   }
