@@ -29,7 +29,7 @@
         <input type="hidden" name="statusClassroom" value="A">
         <div class="form-group">
             <button type="submit" class="btn btn-dark">Create</button>
-            <button type="button" onclick="window.location.href = '{{ url('classroom') }}'" class="btn btn-secondary">Back</button>
+            <button type="button" onclick="window.location.href = '{{ url('classroom') }}'" class="btn btn-secondary">Classroom</button>
         </div>
     {!! Form::close() !!}
 </div>
