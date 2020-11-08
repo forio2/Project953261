@@ -1,6 +1,3 @@
-@extends('layouts.app')
-
-@section('content')
 <body style="background-image: linear-gradient(150deg, rgba(2, 30, 89, 0.6) 30%, rgba(93, 191, 54, 0.7)), url('https://s7d2.scene7.com/is/image/TWCNews/classroom_12_jpg1280x720jpg?wid=1250&hei=703&$wide-bg$') ;
              background-position: center;
              background-repeat: no-repeat;
@@ -53,7 +50,8 @@
                             </div>
 
                             <div class="form-group row">
-                                <div class="col-md-6 offset-md-4">
+                                <div class="col-md-6 offset-md-4 d-flex">
+                                    <div class="row">
                                     <div class="form-check">
                                         <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
 
@@ -61,6 +59,12 @@
                                             {{ __('Remember Me') }}
                                         </label>
                                     </div>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <a class="btn btn-link " href="{{ url('/register') }}">
+                                            {{ __('Create an account?') }}
+                                    </a>
                                 </div>
                             </div>
 
@@ -69,12 +73,6 @@
                                     <button type="submit" class="btn btn-dark btn-lg btn-block">
                                         {{ __('Login') }}
                                     </button>
-
-                                    @if (Route::has('password.request'))
-                                        <a class="btn btn-link" href="{{ route('password.request') }}">
-                                            {{ __('Forgot Your Password?') }}
-                                        </a>
-                                    @endif
                                 </div>
                             </div>
                         </form>
@@ -84,6 +82,7 @@
         </div>
     </div>
     </div>
-</div></body>
-@endsection
+</div>
+</body>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
 
