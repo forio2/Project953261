@@ -7,10 +7,10 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 </head>
-<body>
-@extends('layouts.app')
-
-@section('content')
+<body style="background-image: linear-gradient(150deg, rgba(2, 30, 89, 0.6) 30%, rgba(93, 191, 54, 0.7)), url('https://s7d2.scene7.com/is/image/TWCNews/classroom_12_jpg1280x720jpg?wid=1250&hei=703&$wide-bg$') ;
+             background-position: center;
+             background-repeat: no-repeat;
+             background-size: cover;">
     <div class="img-fluid">
         <div class="row logo-container-div justify-content-center">
             <div class="logo-wrapper col-auto">
@@ -36,20 +36,18 @@
             </div>
         </div>
     </div>
-    @endsection
 </body>
 <style>
   .img-fluid {
     height: max-content;
     width: auto;
-    background-image: linear-gradient(150deg, rgba(89, 2, 2, 0.6) 30%, rgba(191, 118, 54, 0.7)), url("assets/s.jpg");
     background-position: 0%, 0%, 50%, 50%;
     background-attachment: scroll, fixed;
     background-size: auto, cover;
   }
   .logo-wrapper {
     font-family: 'Raleway', sans-serif;
-    padding: 250px 30px;
+    padding: 170px 30px;
     text-align: center;
     position: relative;
   }

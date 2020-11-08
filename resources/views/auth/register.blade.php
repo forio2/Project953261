@@ -1,11 +1,25 @@
 @extends('layouts.app')
 
 @section('content')
+<body style="background-image: linear-gradient(150deg, rgba(2, 30, 89, 0.6) 30%, rgba(93, 191, 54, 0.7)), url('https://s7d2.scene7.com/is/image/TWCNews/classroom_12_jpg1280x720jpg?wid=1250&hei=703&$wide-bg$') ;
+             background-position: center;
+             background-repeat: no-repeat;
+             background-size: cover;">
+<div class="img-fluid" style='height: max-content;
+                              width: auto;
+                              background-position: 0%, 0%, 50%, 50%;
+                              background-attachment: scroll, fixed;
+                              background-size: auto, cover;'>
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Register') }}</div>
+        <div class="logo-wrapper col-auto" style='font-family: Raleway, sans-serif;
+                                                      padding: 50px 30px;
+                                                      text-align: center;
+                                                      position: relative;'>
+
+
+            <div class="card" style='width: 800px' >
+                <div class="card-header" style="font-weight: bold; font-size: 30px">{{ __('Register') }}</div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('register') }}">
@@ -88,19 +102,23 @@
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
                             </div>
                         </div>
-                        <div class="form-check row">
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="statusPeople" id="exampleRadios1" value="T" checked>
-                                <label class="form-check-label">Teacher</label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="statusPeople" id="exampleRadios2" value="S" checked>
-                                <label class="form-check-label">Student</label>
+                        <div class="form-group row" style='text-align: left;'>
+                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('Your Status') }}</label>
+                            <div class="col-md-6">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="statusPeople" id="exampleRadios1" value="T" checked>
+                                    <label class="form-check-label">Teacher</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="statusPeople" id="exampleRadios2" value="S" checked>
+                                    <label class="form-check-label">Student</label>
+                                </div>
                             </div>
                         </div>
+                        <br>
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
+                                <button type="submit" class="btn btn-dark btn-lg btn-block">
                                     {{ __('Register') }}
                                 </button>
                             </div>
@@ -111,4 +129,6 @@
         </div>
     </div>
 </div>
+</div>
+</body>
 @endsection
