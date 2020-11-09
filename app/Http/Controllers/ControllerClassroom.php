@@ -27,7 +27,9 @@ class ControllerClassroom extends Controller
     public function create()
     {
         $data = Booking::all();
-        return view('classroom.create',compact('data'));
+        $data2 = Classroom::all()->where('statusClassroom', 'U');
+        $data3 = 1;
+        return view('classroom.create',compact(['data', 'data2', 'data3']));
     }
 
     /**
@@ -93,14 +95,6 @@ class ControllerClassroom extends Controller
             'lastname' => $request->lastname,
             'nameClassroom' => $request->nameClassroom,
         ]);
-        /*else{
-            echo "<script>
-            alert('Full!');
-            window.location.href='{{ url('classroom') }}';
-            </script>";
-        }*/
-       // Classroom::where('noClassroom', '=', $id)->update($request->all());
-
         return redirect('/classroom');
     }
 
@@ -112,6 +106,7 @@ class ControllerClassroom extends Controller
      */
     public function destroy($id)
     {
-        //
+        Classroom::where('noClassroom', $id)->delete();
+        return redirect('/classroom/create');
     }
 }

@@ -33,7 +33,53 @@
         </div>
     {!! Form::close() !!}
 </div>
+<br><br>
+<div class="container">
+  <div class="row">
+    <div class="col">
+    @foreach($data2 as $classroom)
+     {!! Form::open(['action' => ['ControllerClassroom@destroy', $classroom->noClassroom], 'id' => $classroom->noClassroom , 'method' => 'DELETE']) !!}
+     <?php
+      $data3;
+      $data3++;
+     ?>
+      <table class="table">
+      @if($data3 == 2)
+        <thead class="thead-dark">
+        <tr>
+          <th scope="col">
+          <p class="text-center">Classroom name</p>
+          </th>
+          <th scope="col">
+            <p class="text-center">Delete</p>
+          </th>
+        </tr>
+        @endif
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+            {{$classroom->nameClassroom}}
+            </td>
+            <td>
+            <div class="d-flex">
+              <button type="button" class="btn btn-danger p-2 ml-auto" style="width: 200px" onclick="document.getElementById('<?php echo  $classroom->noClassroom ?>').submit();">delete</button>
+              <input type="hidden" name="noClassroom" value="{{$classroom->noClassroom}}">
+              <input type="hidden" name="nameClassroom" value="{{$classroom->nameClassroom}}">
+              <input type="hidden" name="statusClassroom" value="U">
+            </div>
+            </td> 
+          </tr>
+        </tbody>
+      </table>
+      {!! Form::close() !!}
+      @endforeach
+    </div>
+  </div>
+</div>
 
+<h1 style="text-align:center;">History</h1>
+<br><br>
 <div class="container">
 <table class="table">
   <thead class="thead-dark">
