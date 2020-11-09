@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Classroom;
+use App\Booking;
 
 class ControllerClassroom extends Controller
 {
@@ -25,7 +26,8 @@ class ControllerClassroom extends Controller
      */
     public function create()
     {
-        return view('classroom.create');
+        $data = Booking::all();
+        return view('classroom.create',compact('data'));
     }
 
     /**
@@ -76,6 +78,8 @@ class ControllerClassroom extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
+            'name' => 'required',
+            'lastname' => 'required',
             'noClassroom' => 'required',
             'nameClassroom' => 'required',
             'statusClassroom' => 'required',
@@ -84,6 +88,17 @@ class ControllerClassroom extends Controller
         Classroom::where('noClassroom', $id)->update([
             'statusClassroom' => $request->statusClassroom
         ]);
+        Booking::create([
+            'name' => $request->name,
+            'lastname' => $request->lastname,
+            'nameClassroom' => $request->nameClassroom,
+        ]);
+        /*else{
+            echo "<script>
+            alert('Full!');
+            window.location.href='{{ url('classroom') }}';
+            </script>";
+        }*/
        // Classroom::where('noClassroom', '=', $id)->update($request->all());
 
         return redirect('/classroom');

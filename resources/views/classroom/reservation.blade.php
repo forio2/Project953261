@@ -32,7 +32,7 @@
         <div class="col">
             {!! Form::open(['action' => ['ControllerClassroom@update', $classroom->noClassroom], 'id' => $classroom->noClassroom , 'method' => 'PUT']) !!}
                 <div class="row" onclick="document.getElementById('<?php echo  $classroom->noClassroom?>').submit();" style="cursor:pointer"> <!-- onclick from form's id -->
-                 <div class="Menu_img" id="imgPorkMenu">
+                 <div id="bg">
                     <div class="row logo-container-div align-items-center justify-content-center">
                      <div class="logo-wrapper col-auto ">
                         <h1 class="nameMenu">{{$classroom->nameClassroom}}</h1>
@@ -40,6 +40,8 @@
                         <input type="hidden" name="noClassroom" value="{{$classroom->noClassroom}}">
                         <input type="hidden" name="nameClassroom" value="{{$classroom->nameClassroom}}">
                         <input type="hidden" name="statusClassroom" value="U">
+                        <input type="hidden" name="name" value="{{Auth::user()->name}}">
+                        <input type="hidden" name="lastname" value="{{Auth::user()->lastname}}">
                      </div>
                     </div>
                  </div>
@@ -75,7 +77,7 @@
       #contact{
         color: whitesmoke;
       }
-      #imgPorkMenu{
+      #bg{
         height: 430px;
         width: 300px;
         background-image: linear-gradient(150deg, rgba(191, 118, 54, 0.6) 30%, rgba(191, 118, 54, 0.7));

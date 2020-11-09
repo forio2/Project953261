@@ -33,6 +33,39 @@
         </div>
     {!! Form::close() !!}
 </div>
+
+<div class="container">
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">
+        Classroom name
+      </th>
+      <th scope="col" >
+        Name
+      </th>
+      <th scope="col">
+        Lastname
+      </th>
+    </tr>
+  </thead>
+@foreach($data as $x)
+  <tbody>
+    <tr>
+      <td>
+        {{$x->nameClassroom}}
+      </td>
+      <td>
+        {{$x->name}}
+      </td>
+      <td>
+        {{$x->lastname}}
+      </td>
+    </tr>
+  </tbody>
+@endforeach
+</table>
+</div>
 @endsection
 <style>
       .img-fluid{

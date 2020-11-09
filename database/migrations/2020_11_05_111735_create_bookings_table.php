@@ -15,15 +15,10 @@ class CreateBookingsTable extends Migration
     {
         Schema::create('bookings', function (Blueprint $table) {
             $table->increments('noBook');
-            $table->integer('id')->unsigned()->nullable();
-            $table->foreign('id')->references('id')->on('users');
-           
-            $table->integer('noClassroom')->unsigned()->nullable();
-            $table->foreign('noClassroom')->references('noClassroom')->on('classrooms');
-            
-            $table->integer('quantity');
+            $table->string('name');
+            $table->string('lastname');
+            $table->string('nameClassroom');
             $table->timestamps();
-
         });
     }
 
