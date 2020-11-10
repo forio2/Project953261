@@ -14,6 +14,7 @@
     <div class="img-fluid">
         <div class="row logo-container-div justify-content-center">
             <div class="logo-wrapper col-auto">
+                <h1 style="color:white ; font-weight:bolder ; font-size:60px">CLASSROOM BOOKING</h1>
                 <div class="jumbotron jumbotron-fluid rounded shadow-lg p-3 mb-5 rounded" style="width: 700px; margin-top: 100px;"> <!--jumbotron, rounded and shadow -->
                     <div class="container">
                         <div class="row">
@@ -47,7 +48,7 @@
   }
   .logo-wrapper {
     font-family: 'Raleway', sans-serif;
-    padding: 250px 30px;
+    padding: 200px 30px;
     text-align: center;
     position: relative;
   }

@@ -1,24 +1,25 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="img-fluid">
+<div class="img-fluid"  style="background-image: linear-gradient(150deg, rgba(2, 30, 89, 0.6) 30%, rgba(93, 191, 54, 0.7)), url('https://s7d2.scene7.com/is/image/TWCNews/classroom_12_jpg1280x720jpg?wid=1250&hei=703&$wide-bg$') ;
+                               background-position: center;
+                               background-repeat: no-repeat;
+                               background-size: cover;
+                               padding: 0px 0px">
     <div class="row logo-container-div justify-content-center">
       <div class="logo-wrapper col-auto">
         <div class="jumbotron jumbotron-fluid">
-          <div class="container">
-            <h1>STEAK Justice</h1>
+          <div class="container"  style="padding: 0px 200px; height:100px">
+            <h1>Classroom List</h1>
             <p>
-              Lorem ipsum dolor sit amet, consectetur 
-              adipiscing elit,<br> sed do eiusmod tempor 
-              incididunt ut labore et dolore magna<br> aliqua.
-              Ut enim ad minim veniam, quis nostrud
-              exercitation<br> ullamco laboris nisi ut aliquip 
-              ex ea commodo consequat. 
+                Please choose a room below which status are available<br>
+                A = Available,
+                U = Unavailable
             </p>
           </div>
         </div>
       </div>
-    </div>  
+    </div>
 </div>
 <br><br>
     <ul>
@@ -34,9 +35,16 @@
                 <div class="row" onclick="document.getElementById('<?php echo  $classroom->noClassroom?>').submit();" style="cursor:pointer"> <!-- onclick from form's id -->
                  <div id="bg">
                     <div class="row logo-container-div align-items-center justify-content-center">
-                     <div class="logo-wrapper col-auto ">
-                        <h1 class="nameMenu">{{$classroom->nameClassroom}}</h1>
-                        <h5 id="price">{{$classroom->statusClassroom}}</h5>
+                     <div class="logo-wrapper col-auto">
+                        <h1 style="color: white; font-weight: bolder" class="nameMenu">{{$classroom->nameClassroom}}</h1>
+                        <label style="color: white; font-size: 20px">Status: </label>
+                        <label style="color: white; font-size: 20px" id="price">
+                            @if($classroom->statusClassroom == 'A')
+                                <?php echo 'Available'?>
+                            @else
+                                <?php echo 'Unavailable'?>
+                            @endif
+                        </label>
                         <input type="hidden" name="noClassroom" value="{{$classroom->noClassroom}}">
                         <input type="hidden" name="nameClassroom" value="{{$classroom->nameClassroom}}">
                         <input type="hidden" name="statusClassroom" value="U">
@@ -56,7 +64,7 @@
       .img-fluid{
         height: max-content;
         width: auto;
-        background-image: linear-gradient(150deg, rgba(89, 2, 2, 0.6) 30%, rgba(191, 118, 54, 0.7));
+        background-image: linear-gradient(150deg,rgba(2, 30, 89, 0.6), rgba(93, 191, 54, 0.7));
         background-position: 0%, 0%, 50%, 50%;
         background-attachment: scroll, fixed;
         background-size: auto, cover;
@@ -80,7 +88,7 @@
       #bg{
         height: 430px;
         width: 300px;
-        background-image: linear-gradient(150deg, rgba(191, 118, 54, 0.6) 30%, rgba(191, 118, 54, 0.7));
+        background-image: linear-gradient(150deg, rgba(2, 30, 89, 0.6), rgba(2, 30, 89, 0.6));
         background-position: 50%, 50%;
         background-size: contain, cover;
       }

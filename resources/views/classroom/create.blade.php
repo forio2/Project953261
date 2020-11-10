@@ -1,27 +1,29 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="img-fluid">
+<div class="img-fluid" style="background-image: linear-gradient(150deg, rgba(2, 30, 89, 0.6) 30%, rgba(93, 191, 54, 0.7)), url('https://s7d2.scene7.com/is/image/TWCNews/classroom_12_jpg1280x720jpg?wid=1250&hei=703&$wide-bg$') ;
+                              background-position: center;
+                              background-repeat: no-repeat;
+                              background-size: cover;
+                              padding: 0px 0px">
     <div class="row logo-container-div justify-content-center">
       <div class="logo-wrapper col-auto">
         <div class="jumbotron jumbotron-fluid">
-          <div class="container">
-            <h1>STEAK Justice</h1>
+          <div class="container"  style="padding: 0px 200px; height:100px">
+            <h1>Create a Room</h1>
             <p>
-              Lorem ipsum dolor sit amet, consectetur 
-              adipiscing elit,<br> sed do eiusmod tempor 
-              incididunt ut labore et dolore magna<br> aliqua.
-              Ut enim ad minim veniam, quis nostrud
-              exercitation<br> ullamco laboris nisi ut aliquip 
-              ex ea commodo consequat. 
+                This page is create room for student who want to booking a room<br>
+                by put the classroom name below<br>
             </p>
+            <p style="font-size: 30px">⇩</p>
           </div>
         </div>
       </div>
-    </div>  
+    </div>
 </div>
 <br><br>
 <div class="container">
+    <h3 style="font-weight: bolder">Classroom name</h3>
     {!! Form::open(['action' => 'ControllerClassroom@store', 'method' => 'POST']) !!}
         <div class="form-group">
             <input type="text" class="form-control" placeholder="Enter Classroom Name" name="nameClassroom">
@@ -68,7 +70,7 @@
               <input type="hidden" name="nameClassroom" value="{{$classroom->nameClassroom}}">
               <input type="hidden" name="statusClassroom" value="U">
             </div>
-            </td> 
+            </td>
           </tr>
         </tbody>
       </table>
